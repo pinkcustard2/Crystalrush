@@ -13,6 +13,7 @@ echo				Crystalrush
 pause
 :start
 cls
+set choice= 0
 echo 1. Start game
 echo 2. Load game
 echo 3. How to Play
@@ -26,8 +27,24 @@ echo verb not known
 pause
 goto start
 
+:startPage
+cls
+set choice= 0
+echo Welcome to Crystal rush
+echo Before starting to play make sure you have read how to play, or at least have a rough idea of how to play.
+pause
+echo 1. Start game (have read HtP)
+echo 2. Back 
+set /p choice= Please enter here: 
+if %choice%==1 goto wildpostMain	
+if %choice%==2 goto start	
+echo verb not known
+pause
+goto startPage
+
 :howToPlay
 cls
+set choice= 0
 echo How to play
 echo When you start, you will start with your hero. With this hero you can walk around the small town you start in. When you start, you will want to complete the first few quests. After you complete the first few quests, you will be asked to pick a weapon to be proficient in and then a skill to be proficient in. To be proficient in a skill or a weapon, means that you will be better at using that skill/weapon and you will deal more damage or use that skill quicker or better. After you have done that, you will be left on your own to explore the world. When you are exploring the world, you will find resource deposits, enemies and a building zones.
 echo You can get more proficiencies by paying money to the proficiency master.
@@ -47,6 +64,7 @@ goto howToPlay
 
 :resourceHelp
 cls
+set choice= 0
 echo Resource Help
 echo Resource deposits can be found throughout the world. The types of deposits are wood deposits (Normally found in overground.). An example of a wood deposit would be rough wood(the basic wood). They can be obtained through axes), ground deposits (Found everywhere. An example would be dirt or stone. They can be obtained through shovels or pickaxes.) and mineral deposits (Found in mines. An example would be copper. They can be optained through pickaxes).
 echo Raw resources (resources from deposits) can be refined into refined resources. 
@@ -67,6 +85,7 @@ goto resourceHelp
 
 :refinedResourceHelp
 cls
+set choice= 0
 echo Refined Resource Help
 echo Refined resources can be made in the furnace (made in building zones(100 stone for the basic furnace)). Furnaces can also be found in certain cities and villages, however it will cost gold to use it. Refined resources can be used to build more things in the building zones and it can be used in quests. 
 echo Refined wood is made in the sawmill instead of a furnace (exept charcoal).
@@ -80,6 +99,7 @@ goto refinedResourceHelp
 
 :resourceListHelp
 cls
+set choice= 0
 echo 	Raw Wood
 echo 1)Rough wood
 echo 	Raw Minerals
@@ -124,6 +144,7 @@ goto resourceListHelp
 
 :roughWoodHelp
 cls
+set choice= 0
 echo Rough Wood 
 echo Cost to buy: 2C
 echo Selling price: 1C
@@ -140,6 +161,7 @@ goto roughWoodHelp
 
 :copperHelp
 cls
+set choice= 0
 echo Copper 
 echo Cost to buy: 5C
 echo Selling price: 2C
@@ -156,6 +178,7 @@ goto copperHelp
 
 :tinHelp
 cls
+set choice= 0
 echo Tin 
 echo Cost to buy: 5C
 echo Selling price: 2C
@@ -172,6 +195,7 @@ goto tinHelp
 
 :ironHelp
 cls
+set choice= 0
 echo Iron
 echo Cost to buy: 1S
 echo Selling price: 3C
@@ -188,6 +212,7 @@ goto ironHelp
 
 :coalHelp
 cls
+set choice= 0
 echo Coal
 echo Cost to buy: 5C
 echo Selling price: 2C
@@ -204,6 +229,7 @@ goto coalHelp
 
 :dirtHelp
 cls
+set choice= 0
 echo Dirt
 echo Cost to buy: 1C
 echo Selling price: Can't be sold
@@ -220,6 +246,7 @@ goto dirtHelp
 
 :stoneHelp
 cls
+set choice= 0
 echo Stone
 echo Cost to buy: 3C
 echo Selling price: 1C
@@ -238,6 +265,7 @@ goto stoneHelp
 
 :basicPlanksHelp
 cls
+set choice= 0
 echo Basic Planks
 echo Cost to buy: 1S
 echo Selling price: 3C
@@ -255,6 +283,7 @@ goto basicPlanksHelp
 
 :charcoalHelp
 cls
+set choice= 0
 echo Charcoal
 echo Cost to buy: 5C
 echo Selling price: 2C
@@ -272,6 +301,7 @@ goto charcoalHelp
 
 :copperBarHelp
 cls
+set choice= 0
 echo Copper Bar
 echo Cost to buy: 1S
 echo Selling price: 3C
@@ -289,6 +319,7 @@ goto copperBarHelp
 
 :tinBarHelp
 cls
+set choice= 0
 echo Tin Bar
 echo Cost to buy: 1S
 echo Selling price: 3C
@@ -306,6 +337,7 @@ goto tinBarHelp
 
 :bronzeBarHelp
 cls
+set choice= 0
 echo Bronze Bar
 echo Cost to buy: 3S
 echo Selling price: 5C
@@ -323,6 +355,7 @@ goto bronzeBarHelp
 
 :ironBarHelp
 cls
+set choice= 0
 echo Iron Bar
 echo Cost to buy: 5S
 echo Selling price: 1S
@@ -340,6 +373,7 @@ goto ironBarHelp
 
 :othilBarHelp
 cls
+set choice= 0
 echo Othil Bar
 echo Cost to buy: 1G
 echo Selling price: 2S
@@ -357,6 +391,7 @@ goto othilBarHelp
 
 :moneyHelp
 cls
+set choice= 0
 echo Money is what you can use to buy and sell items at the marketplace (found at towns and can be places in building zones). You can also hire workers with money.
 echo Money has different values:
 echo Copper (C) - 1C
@@ -374,6 +409,7 @@ goto moneyHelp
 
 :enemieHelp
 cls
+set choice= 0
 echo Enemies
 echo Enemies are found in many places around the map, mainly in camps. Enemies give can give you money. You use weapons to kill enemies. There are several different types of enemies ranging in difficulty. Enemies can also attack you in building zones, so you will have to build defences to stop them.
 pause
@@ -389,6 +425,7 @@ goto enemieHelp
 
 :enemieListHelp
 cls
+set choice= 0
 echo TBD
 echo 1. Back
 pause
@@ -400,6 +437,7 @@ goto enemieListHelp
 
 :howToFight
 cls
+set choice= 0
 echo How to fight
 echo When you fight, you will use your weapon. You will deal the damage the weapon has, minus the defence of the enemie.
 echo Once you do an attack, your opponent will get a chance to attack. When the opponent attacks, you will lose the opponent's damage minus the defence you your armour health. 
@@ -414,6 +452,7 @@ goto howToFight
 
 :buildingZoneHelp
 cls 
+set choice= 0
 echo Building zones
 echo Building zones are where you can build item and craft items. They are found all over the map, for easy access where ever you are.
 pause
@@ -430,6 +469,7 @@ goto enemieHelp
 
 :buildingHelp
 cls
+set choice= 0
 echo Building
 echo When you are in your building zone, you can choose to build something. Building requires resources to do. There are a variety of buildings to build from.
 pause
@@ -444,6 +484,7 @@ goto enemieHelp
 
 :buildingListHelp
 cls 
+set choice= 0
 echo Building List
 echo TBD
 pause
@@ -451,6 +492,7 @@ goto buildingHelp
 
 :craftingHelp
 cls
+set choice= 0
 echo Crafting
 echo To craft, you must have some kind of work station to do so. For example a furnace to smelt ores into other ores, or a forge to make weapons.
 echo You can craft weapons, pixaxes, axes and shovels. There are several different types of weapons, that will be listed in the crafting list, as well as where you craft them in. 
@@ -466,6 +508,7 @@ goto enemieHelp
 
 :craftingListHelp
 cls 
+set choice= 0
 echo Building List
 echo TBD
 pause
